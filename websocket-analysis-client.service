@@ -1,0 +1,23 @@
+[Unit]
+Description=Cliente WebSocket ETL Analysis - Ejecuta análisis cuando se detectan cambios en archivos .xlsx
+After=network.target
+
+[Service]
+Type=simple
+User=fits
+WorkingDirectory=/home/fits/codigo/Desktop/etl_analysis
+Environment="WS_SERVER_URL=ws://10.4.0.2:8765"
+Environment="ETL_ANALYSIS_DIR=/home/fits/codigo/Desktop/etl_analysis"
+Environment="ETL_ANALYSIS_SCAN_URL=http://127.0.0.1:3002/scan"
+Environment="BATCH_DELAY=5"
+Environment="LOG_LEVEL=INFO"
+ExecStart=/usr/bin/python3 /home/fits/codigo/Desktop/etl_analysis/cliente_websocket_analysis.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+
+

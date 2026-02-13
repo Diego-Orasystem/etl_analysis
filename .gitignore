@@ -1,0 +1,26 @@
+
+# Auto-ignore
+node_modules/
+.env
+.env.*
+*.log
+logs/
+log/
+data/
+dist/
+build/
+.tmp/
+.cache/
+
+# Auto-ignore
+node_modules/
+.env
+.env.*
+*.log
+logs/
+log/
+data/
+dist/
+build/
+.tmp/
+.cache/
